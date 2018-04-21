@@ -1,0 +1,4 @@
+set lines=55 "ウインドウの縦幅
+set columns=180 "ウインドウの横幅
+colorscheme koehler "カラースキーム
+set background=dark "ダーク系のカラースキームを使う
