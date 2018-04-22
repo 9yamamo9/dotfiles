@@ -24,3 +24,27 @@ set incsearch                        "検索文字列入力時に順次対象文
 set wrapscan                         "検索時に最後まで行ったら最初に戻る
 set hlsearch                         "検索後をハイライト表示
 nmap <Esc><Esc> :nohlsearch<CR><Esc> "ESC連打でハイライト解除 
+
+
+"----------------------------------
+" NeoBungle設定
+"----------------------------------
+set nocompatible
+filetype plugin indent off
+
+if has('vim_starting')
+  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
+  call neobundle#begin(expand('~/dotfiles/.vim/bundle'))
+endif
+
+"call neobundle#begin(expand('~/dotfiles/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundle here:
+NeoBundle 'Shougo/unite.vim'
+
+call neobundle#end()
+
+filetype plugin indent on

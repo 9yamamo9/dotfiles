@@ -1,0 +1,2 @@
+3.0
+{'neobundle.vim': {'checked_time': 1524373271, 'installed_uri': 'https://github.com/Shougo/neobundle.vim.git', 'installed_path': '/Users/yutayamamori/dotfiles/.vim/bundle/neobundle.vim', 'revisions': {}, 'updated_time': '1506384066'}, 'unite.vim': {'checked_time': 1524373271, 'installed_uri': 'https://github.com/Shougo/unite.vim.git', 'installed_path': '/Users/yutayamamori/dotfiles/.vim/bundle/unite.vim', 'revisions': {'1523708316': '7252fc334ed24722ad70867ba9e4aba125b611d7'}, 'updated_time': '1523708316'}}
