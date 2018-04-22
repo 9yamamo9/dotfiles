@@ -14,9 +14,9 @@ colors
 #--------------------------------------------------
 #PROMPT='[%~:%n] %# '
 if [ $UID -eq 0 ]; then
-  PROMPT="%F{red}%n:%f%F{green}%d%f %% "
+  PROMPT="%F{red}%n:%f%F{green}%~%f %% "
 else
-  PROMPT="%F{cyan}%n:%f%F{green}%d%f %% "
+  PROMPT="%F{cyan}%n:%f%F{green}%~%f %% "
 fi
 
 #--------------------------------------------------
