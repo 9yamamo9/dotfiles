@@ -90,6 +90,7 @@ setopt auto_param_slash      # ディレクトリ名の補完で末尾の / を�
 #"----------------------------------
 #" Alias設定
 #"----------------------------------
+alias cdf="cd /Users/yutayamamori/workstation/flathand"
 alias gga="git log --graph --all --abbrev-commit --date=relative --pretty=format:'%C(red)%h %C(reset)-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 alias gf="git fetch -p"
 alias gs="git status"
