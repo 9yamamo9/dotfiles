@@ -9,6 +9,9 @@ export LANG=ja_JP.UTF-8
 autoload -Uz colors
 colors
 
+setopt correct #コマンドミスを修正
+chpwd() { ls -ltr --color=auto }
+
 #--------------------------------------------------
 # Prompt設定
 #--------------------------------------------------
@@ -18,6 +21,19 @@ if [ $UID -eq 0 ]; then
 else
   PROMPT="%F{cyan}%n:%f%F{green}%~%f %% "
 fi
+
+#--------------------------------------------------
+# keybind設定
+#--------------------------------------------------
+bindkey '^r' history-incremental-pattern-search-backward
+bindkey '^s' history-incremental-pattern-search-forward
+
+# コマンドを途中まで入力後、historyから絞り込み
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey '^p' history-beginning-search-backward-end
+bindkey '^b' history-beginning-search-forward-end
 
 #--------------------------------------------------
 # GitのPrompt設定
@@ -81,11 +97,10 @@ setopt share_history
 #--------------------------------------------------
 # 補完機能の設定 
 #--------------------------------------------------
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 setopt auto_param_slash      # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
-
 
 #"----------------------------------
 #" Alias設定
