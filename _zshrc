@@ -10,7 +10,7 @@ autoload -Uz colors
 colors
 
 setopt correct #コマンドミスを修正
-chpwd() { ls -ltr --color=auto }
+chpwd() { ls -ltrG }
 
 #--------------------------------------------------
 # Prompt設定
