@@ -1,5 +1,6 @@
 # setup-zsh {{{
 setup-zsh:
+	rm -f ~/.zshrc
 	ln -s ~/dotfiles/zsh/_zshrc ~/.zshrc
 # }}}
 # install-neovim {{{
