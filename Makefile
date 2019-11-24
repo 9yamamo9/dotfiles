@@ -1,6 +1,6 @@
 # setup-zsh {{{
 setup-zsh:
-	brew install zplug
+	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 	rm -f ~/.zshrc
 	ln -s ~/dotfiles/zsh/_zshrc ~/.zshrc
 # }}}
