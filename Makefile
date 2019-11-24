@@ -1,15 +1,27 @@
-zsh-setup:
-	brew install zplug
-	zplug "momo-lab/zsh-addrev-alias"
-
-go-setup:
-	go get -u golang.org/x/tools/cmd/goimports
-	go get -u golang.org/x/tools/cmd/godoc
-	go get -u golang.org/x/tools/cmd/cover
-	go get -u github.com/nsf/gocode
-	go get -u github.com/golang/lint/golint
-	go get -u github.com/rogpeppe/godef
-	go get -u github.com/jstemmer/gotags
-
-ruby-atom-uetup:
-	sudo gem install rsense
+# setup-zsh {{{
+setup-zsh:
+	ln -s ~/dotfiles/zsh/_zshrc ~/.zshrc
+# }}}
+# install-neovim {{{
+install-neovim:
+	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
+	sh ./install.sh
+	rm -f ./install.sh
+# }}}
+# setup-vim {{{
+setting-vim:
+	mkdir -p ~/.vim/colors
+	cd ~/.vim/colors; git clone https://github.com/tomasr/molokai; mv molokai/colors/molokai.vim ./
+	ln -s ~/dotfiles/vim/_vimrc ~/.vimrc
+# }}}
+# install-pyenv {{{
+install-pyenv:
+	git clone git://github.com/yyuu/pyenv.git ~/.pyenv
+	brew install pyenv-virtualenv
+	pyenv install 2.7.14
+	pyenv install 3.6.4
+# }}}
+# install-goenv {{{
+install-goenv:
+	git clone git://github.com/syndbg/goenv.git ~/.goenv
+# }}}
