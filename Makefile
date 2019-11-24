@@ -1,5 +1,6 @@
 # setup-zsh {{{
 setup-zsh:
+	brew install zplug
 	rm -f ~/.zshrc
 	ln -s ~/dotfiles/zsh/_zshrc ~/.zshrc
 # }}}
