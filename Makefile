@@ -6,15 +6,16 @@ setup-zsh:
 # }}}
 # install-neovim {{{
 install-neovim:
+	brew install neovim
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
 	sh ./install.sh
 	rm -f ./install.sh
-# }}}
-# setup-vim {{{
-setting-vim:
+	echo "TODO: インストール後にvimを起動して:NeoBundleInstallを実行する"
 	mkdir -p ~/.vim/colors
-	cd ~/.vim/colors; git clone https://github.com/tomasr/molokai; mv molokai/colors/molokai.vim ./
+	cd ~/.vim/colors; git clone https://github.com/tomasr/molokai.git; mv molokai/colors/molokai.vim ./
 	ln -s ~/dotfiles/vim/_vimrc ~/.vimrc
+	mkdir -p ~/.config/nvim; cd ~/.config/nvim; touch init.vim
+	ln -s ~/dotfiles/vim/_init.vim ~/.config/nvim/.
 # }}}
 # install-pyenv {{{
 install-pyenv:
