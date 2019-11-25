@@ -20,10 +20,13 @@ setting-vim:
 install-pyenv:
 	git clone git://github.com/yyuu/pyenv.git ~/.pyenv
 	brew install pyenv-virtualenv
-	pyenv install 2.7.14
 	pyenv install 3.6.4
+	pyenv rehash
+	pyenv global 3.6.4
 # }}}
 # install-goenv {{{
 install-goenv:
 	git clone git://github.com/syndbg/goenv.git ~/.goenv
+	goenv install 1.12.13
+	goenv global 1.12.13
 # }}}
