@@ -15,15 +15,19 @@ install-neovim:
 	cd ~/.vim/colors; git clone https://github.com/tomasr/molokai.git; mv molokai/colors/molokai.vim ./
 	ln -s ~/dotfiles/vim/_vimrc ~/.vimrc
 	mkdir -p ~/.config/nvim; cd ~/.config/nvim; touch init.vim
-	ln -s ~/dotfiles/vim/_init.vim ~/.config/nvim/.
+	ln -s ~/dotfiles/vim/_init.vim ~/.config/nvim/init.vim
 # }}}
 # install-pyenv {{{
 install-pyenv:
 	git clone git://github.com/yyuu/pyenv.git ~/.pyenv
 	brew install pyenv-virtualenv
 	pyenv install 3.6.4
+	pyenv install 2.7.17
 	pyenv rehash
-	pyenv global 3.6.4
+	pyenv global 3.6.4 2.7.17
+	pip install neovim
+	pip2 install neovim
+	pip3 install neovim
 # }}}
 # install-goenv {{{
 install-goenv:
