@@ -3,7 +3,6 @@ setup-zsh:
 	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 	rm -f ~/.zshrc
 	ln -s ~/dotfiles/zsh/_zshrc ~/.zshrc
-# }}}
 # install-neovim {{{
 install-neovim:
 	brew install neovim
@@ -16,7 +15,6 @@ install-neovim:
 	ln -s ~/dotfiles/vim/_vimrc ~/.vimrc
 	mkdir -p ~/.config/nvim; cd ~/.config/nvim; touch init.vim
 	ln -s ~/dotfiles/vim/_init.vim ~/.config/nvim/init.vim
-# }}}
 # install-pyenv {{{
 install-pyenv:
 	git clone git://github.com/yyuu/pyenv.git ~/.pyenv
@@ -28,10 +26,11 @@ install-pyenv:
 	pip install neovim
 	pip2 install neovim
 	pip3 install neovim
-# }}}
 # install-goenv {{{
 install-goenv:
 	git clone git://github.com/syndbg/goenv.git ~/.goenv
 	goenv install 1.12.13
 	goenv global 1.12.13
-# }}}
+# install-circle-ci-cli {{{
+install-circle-ci-cli:
+	curl -fLSs https://circle.ci/cli | bash
