@@ -58,8 +58,10 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 # }}}
 # Flutter Setting {{{
-export PATH="$PATH:$HOME/src/flutter/bin"
+export PATH="$PATH:$HOME/flutter/bin"
 # }}}
+# AWS CLI Setting {{{
+export PATH=$HOME/.local/bin:$PATH
 # Keybind Setting {{{
 bindkey '^[[r' history-incremental-pattern-search-backword
 bindkey '^[[s' history-incremental-pattern-search-forword
