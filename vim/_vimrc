@@ -67,18 +67,20 @@ NeoBundle 'vim-syntastic/syntastic'
 NeoBundle 'juliosueiras/vim-terraform-completion' " terraformの補完
 
 " deloplete {{{3
-NeoBundle 'Shougo/deoplete.nvim'            " Vim8で動作する高速な補完プラグイン
-if neobundle#tap('deoplete.nvim')
-        let s:hooks = neobundle#get_hooks('deoplete.nvim')
-        function! s:hooks.on_source(bundle)
-                let g:deoplete#enable_at_startup = 1
-        endfunction
-endif
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/denite.nvim'              " ファイルランチャ
-NeoBundle 'zchee/deoplete-go'
-NeoBundle 'zchee/deoplete-jedi'
+" NeoBundle 'Shougo/deoplete.nvim'            " Vim8で動作する高速な補完プラグイン
+" NeoBundle 'roxma/nvim-yarp'
+" NeoBundle 'roxma/vim-hug-neovim-rpc'
+" if neobundle#tap('deoplete.nvim')
+"        let s:hooks = neobundle#get_hooks('deoplete.nvim')
+"        function! s:hooks.on_source(bundle)
+"                let g:deoplete#enable_at_startup = 1
+"       endfunction
+"endif
+"NeoBundle 'Shougo/neosnippet.vim'
+"NeoBundle 'Shougo/neosnippet-snippets'
+"NeoBundle 'Shougo/denite.nvim'              " ファイルランチャ
+"NeoBundle 'zchee/deoplete-go'
+"NeoBundle 'zchee/deoplete-jedi'
 " }}}3
 " }}}2
 
@@ -133,11 +135,11 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 " ---------------------
 "  deoplete
 " ---------------------
-let g:python_host_prog = '/Users/yutayamamori/.pyenv/shims/python2'
-let g:python3_host_prog = '/Users/yutayamamori/.pyenv/shims/python3'
-let g:ruby_host_prog = '/usr/local/bin/neovim-ruby-host'
-let g:deoplete#auto_completion_start_length = 1
-call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+"let g:python_host_prog = '/Users/yutayamamori/.pyenv/shims/python2'
+"let g:python3_host_prog = '/Users/yutayamamori/.pyenv/shims/python3'
+"let g:ruby_host_prog = '/usr/local/bin/neovim-ruby-host'
+"let g:deoplete#auto_completion_start_length = 1
+"call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
 " ---------------------
 "  Markdown
@@ -162,6 +164,7 @@ nmap <C-n> <Plug>AirlineSelectNextTab
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:go_version_warning = 0
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_enable = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave = 1
@@ -181,7 +184,7 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 " �
 " ---------------------
 "  NerdTree
 " ---------------------
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree "vim起動時にNERDTreeを合わせて起動する
 autocmd StdinReadPre * let s:std_in = 1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
