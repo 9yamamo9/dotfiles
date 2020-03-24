@@ -61,6 +61,8 @@ export PATH=$PATH:$GOPATH/bin
 # Flutter Setting {{{
 export PATH="$PATH:$HOME/flutter/bin"
 # }}}
+# Android Setting
+export PATH=$PATH:/Users/yutayamamori/Library/Android/sdk/platform-tools
 # AWS CLI Setting {{{
 export PATH=$HOME/.local/bin:$PATH
 # Keybind Setting {{{
