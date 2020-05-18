@@ -47,7 +47,7 @@ NeoBundleFetch 'Shouge/neobundle.vim'
 
 " プラグイン管理 {{{2
 NeoBundle 'fatih/vim-go'                    " Go 初期インストール後は:GoInstallBinnariesを実行する
-NeoBundle 'SirVer/ultisnips'                " Goのスニペット
+"NeoBundle 'SirVer/ultisnips'                " Goのスニペット
 NeoBundle 'tpope/vim-markdown'              " Markdown記法
 NeoBundle 'previm/previm'                   " Markdownプレビュー
 NeoBundle 'tpope/vim-surround'              " cs*+ *を+へ置換する、ds( ()を削除する

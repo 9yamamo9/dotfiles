@@ -1,4 +1,6 @@
-# General Setting {{{
+# --------------------
+# General Setting
+# --------------------
 export EDITORP=vim
 export LANG=ja_JP.UTF-8
 autoload -Uz colors
@@ -12,22 +14,30 @@ setopt auto_menu # 補完候補を順に切り替える
 zstyle ':completion:*:defalut' menu select=1
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 zstyle ':completion:*default' list-colors ${(s.:.)LS_COLORS}
-# }}}
-# INPORTS {{{
+
+# --------------------
+# INPORTS
+# --------------------
 source ~/.zplug/init.zsh
-# }}}
-# PLUGINS {{{
+
+# --------------------
+# PLUGINS
+# --------------------
 # zsh-completions
 fpath=(~/.zplug/repos/zsh-users/zsh-completions/src ~/.zsh/completion $fpath)
 
+# --------------------
 # zplug
+# --------------------
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "chrissicool/zsh-256color"
 
+# --------------------
 # 該当するプラグインがインストールされていなかった場合のチェック
+# --------------------
 if ! zplug check --verbose; then
         printf "Install? (y/N): "
         if read -q; then
@@ -40,51 +50,84 @@ setopt nonomatch
 
 autoload -Uz compinit
 compinit -i
-# }}}
-# Pyenv Setting {{{
+
+# --------------------
+# Pyenv Setting
+# --------------------
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-# }}}
-# Goenv Setting {{{
+
+# --------------------
+# Goenv Setting
+# --------------------
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 export GOENV_DISABLE_GOPATH=1
 eval "$(goenv init -)"
-# }}}
-# Golang Setting {{{
+
+# --------------------
+# Golang Setting
+# --------------------
 export GOROOT=/Users/yutayamamori/.goenv/versions/1.10.8
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-# }}}
-# Flutter Setting {{{
+
+# --------------------
+# Flutter Setting
+# --------------------
 export PATH="$PATH:$HOME/flutter/bin"
-# }}}
+
+# --------------------
 # Android Setting
+# --------------------
 export PATH=$PATH:/Users/yutayamamori/Library/Android/sdk/platform-tools
-# AWS CLI Setting {{{
+
+# --------------------
+# AWS CLI Setting
+# --------------------
 export PATH=$HOME/.local/bin:$PATH
-# Keybind Setting {{{
+
+# --------------------
+# ruby setting
+# --------------------
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+
+# --------------------
+# direnv Setting
+# --------------------
+eval "$(direnv hook zsh)"
+
+# --------------------
+# Keybind Setting
+# --------------------
 bindkey '^[[r' history-incremental-pattern-search-backword
 bindkey '^[[s' history-incremental-pattern-search-forword
 
+# --------------------
 # コマンドを途中まで入力後、historyから絞り込み
+# --------------------
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
-# }}}
-# Promt Setting {{{
+
+# --------------------
+# Promt Setting
+# --------------------
 #PROMPT='[%~:%n] %# '
 if [ $UID -eq 0 ];then
   PROMPT="%F{red}%n:%f%F{green}%~%f %% "
 else
   PROMPT="%F{cyan}%n:%f%F{green}%~%f %% "
 fi
-# }}}
-# History Setting {{{
+
+# --------------------
+# History Setting
+# --------------------
 HISTFILE=${HOME}/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -92,8 +135,10 @@ setopt hist_ignore_dups #直前のコマンドと同じ場合、履歴に追加�
 setopt extended_history #履歴に日付も入れる
 setopt share_history
 setopt hist_no_store #historyコマンドは履歴に登録しない
-# }}}
-# Alias Setting {{{
+
+# --------------------
+# Alias Setting
+# --------------------
 alias cdy="cd ~/workspace/yamori"
 alias cdi="cd ~/workspace/imori"
 alias ls="ls -color"
@@ -113,10 +158,10 @@ alias gd="git diff"
 alias co="checkout"
 alias dp="docker ps"
 alias di="docker images"
-alias vim="nvim"
-alias vi="nvim"
-# }}}
-# Git Branch Output Prompt Setting {{{
+
+# --------------------
+# Git Branch Output Prompt Setting
+# --------------------
 function rprompt-git-current-branch {
   local branch_name st branch_status
 
@@ -144,9 +189,12 @@ function rprompt-git-current-branch {
   echo "${branch_status}[$branch_name]"
 }
 
+# --------------------
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+# --------------------
 setopt prompt_subst
 
+# --------------------
 # プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
+# --------------------
 RPROMPT='`rprompt-git-current-branch`'
-# }}}

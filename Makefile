@@ -34,3 +34,16 @@ install-goenv:
 # install-circle-ci-cli {{{
 install-circle-ci-cli:
 	curl -fLSs https://circle.ci/cli | bash
+
+# brew {{{
+brew-all:
+	brew install autoconf
+	brew install curl
+	brew install direnv
+	brew install jq
+	brew install node
+	brew install rbenv
+	brew install terraform
+	brew install tree
+	brew install wget
+	
