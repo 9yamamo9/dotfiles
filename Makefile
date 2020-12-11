@@ -1,9 +1,7 @@
-# setup-zsh {{{
 setup-zsh:
 	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 	rm -f ~/.zshrc
 	ln -s ~/dotfiles/zsh/_zshrc ~/.zshrc
-# install-neovim {{{
 install-neovim:
 	brew install neovim
 	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
@@ -15,7 +13,6 @@ install-neovim:
 	ln -s ~/dotfiles/vim/_vimrc ~/.vimrc
 	mkdir -p ~/.config/nvim; cd ~/.config/nvim; touch init.vim
 	ln -s ~/dotfiles/vim/_init.vim ~/.config/nvim/init.vim
-# install-pyenv {{{
 install-pyenv:
 	git clone git://github.com/yyuu/pyenv.git ~/.pyenv
 	brew install pyenv-virtualenv
@@ -26,16 +23,20 @@ install-pyenv:
 	pip install neovim
 	pip2 install neovim
 	pip3 install neovim
-# install-goenv {{{
-install-goenv:
-	git clone git://github.com/syndbg/goenv.git ~/.goenv
-	goenv install 1.12.13
-	goenv global 1.12.13
-# install-circle-ci-cli {{{
 install-circle-ci-cli:
 	curl -fLSs https://circle.ci/cli | bash
-
-# brew {{{
+install-nodeenv:
+	git clone git://github.com/nodenv/nodenv.git ~/.nodenv
+	git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
+install-typescript:
+	npm install -g typescript
+install-node-modlues:
+	yarn install -g @aws-amplify/cli
+install-go-module:
+	go get -u google.golang.org/grpc
+	go get github.com/golang/protobuf/protoc-gen-go
+	go get -u github.com/golang/dep/cmd/dep
+	go get -u github.com/gin-gonic/gin
 brew-all:
 	brew install autoconf
 	brew install curl
@@ -46,4 +47,9 @@ brew-all:
 	brew install terraform
 	brew install tree
 	brew install wget
+	brew install protobuf
+	brew tap grpc
+	brew install grpc
+	brew install yarn
+	brew install git-secrets
 	
