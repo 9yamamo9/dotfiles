@@ -29,7 +29,7 @@ install-nodeenv:
 	git clone git://github.com/nodenv/nodenv.git ~/.nodenv
 	git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
 install-typescript:
-	npm install -g typescript
+	yarn add -g typescript
 install-node-modlues:
 	yarn install -g @aws-amplify/cli
 install-go-module:
@@ -38,6 +38,7 @@ install-go-module:
 	go get -u github.com/golang/dep/cmd/dep
 	go get -u github.com/gin-gonic/gin
 brew-all:
+	brew update
 	brew install autoconf
 	brew install curl
 	brew install direnv
@@ -52,4 +53,5 @@ brew-all:
 	brew install grpc
 	brew install yarn
 	brew install git-secrets
+	brew install peco
 	
