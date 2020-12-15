@@ -45,7 +45,8 @@ brew-all:
 	brew install jq
 	brew install node
 	brew install rbenv
-	brew install terraform
+	brew tap hashicorp/tap
+	brew install hashicorp/tap/terraform
 	brew install tree
 	brew install wget
 	brew install protobuf
