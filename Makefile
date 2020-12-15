@@ -17,9 +17,8 @@ install-pyenv:
 	git clone git://github.com/yyuu/pyenv.git ~/.pyenv
 	brew install pyenv-virtualenv
 	pyenv install 3.6.4
-	pyenv install 2.7.17
 	pyenv rehash
-	pyenv global 3.6.4 2.7.17
+	pyenv global 3.6.4
 	pip install neovim
 	pip2 install neovim
 	pip3 install neovim
