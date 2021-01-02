@@ -24,13 +24,22 @@ install-pyenv:
 	pip3 install neovim
 install-circle-ci-cli:
 	curl -fLSs https://circle.ci/cli | bash
-install-nodeenv:
-	git clone git://github.com/nodenv/nodenv.git ~/.nodenv
-	git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
+install-node:
+	mkdir -p ~/.nodebrew/src
+	nodebrew install-binary v15.4.0
+	nodebrew ls
+	nodebrew use v15.4.0
+setting-anyenv:
+	anyenv init
+	mkdir -p $(anyenv root)/plugins
+	git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+	anyenv install nodenv
+	anyenv install pyenv
+	anyenv install rbenv
 install-typescript:
-	yarn add -g typescript
+	yarn global add typescript
 install-node-modlues:
-	yarn install -g @aws-amplify/cli
+	yarn global add @aws-amplify/cli
 install-go-module:
 	go get -u google.golang.org/grpc
 	go get github.com/golang/protobuf/protoc-gen-go
@@ -38,12 +47,11 @@ install-go-module:
 	go get -u github.com/gin-gonic/gin
 brew-all:
 	brew update
+	brew install anyenv
 	brew install autoconf
 	brew install curl
 	brew install direnv
 	brew install jq
-	brew install node
-	brew install rbenv
 	brew tap hashicorp/tap
 	brew install hashicorp/tap/terraform
 	brew install tree
@@ -54,4 +62,5 @@ brew-all:
 	brew install yarn
 	brew install git-secrets
 	brew install peco
-	
+	brew install docker
+	brew install docker-compose

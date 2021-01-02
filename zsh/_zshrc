@@ -82,12 +82,17 @@ setopt nonomatch
 #export ZSH_HIGHLIGHT_STYLES[path]='fg=081'
 
 # --------------------
+# Anyenv Setting
+# --------------------
+eval "$(anyenv init -)"
+
+# --------------------
 # Pyenv Setting
 # --------------------
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # --------------------
 # Go Setting
@@ -115,19 +120,13 @@ export PATH=$HOME/.local/bin:$PATH
 # --------------------
 # ruby setting
 # --------------------
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+# export PATH=$HOME/.rbenv/bin:$PATH
+# eval "$(rbenv init -)"
 
 # --------------------
 # node setting
 # --------------------
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
-
-# --------------------
-# track setting
-# --------------------
-export PATH="/usr/local/bin:$PATH"
+# export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 # --------------------
 # direnv Setting
@@ -181,10 +180,7 @@ setopt hist_no_store #historyコマンドは履歴に登録しない
 # --------------------
 # Alias Setting
 # --------------------
-alias cdy="cd ~/workspace/yamori"
-alias cdi="cd ~/workspace/imori"
-alias cdf="cd ~/workspace/flatact"
-alias cda="cd ~/workspace/src/flathandaction"
+alias cdf="cd ~/workspace/github.com/flatact"
 alias ls="ls -G"
 alias l="ls -F"
 alias ll="l -ltr"
